@@ -17,3 +17,5 @@
 
  .*ROI Pooling*
 ![](https://deepsense.ai/wp-content/uploads/2017/02/roi_pooling-1.gif.pagespeed.ce.5V5mycIRNu.gif)
+
+![](https://d2l.ai/_images/roi.svg)
