@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link href="/static/css/index.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="first">
+      <title> Upload new file</title>
+      <form action="/image" method="post" class="form">
+        <input type="submit" value="Image" class="input" >
+      </form>
+    </div>
+
+    <h1>Video Streaming Demonstration</h1>
+    <div class="render">
+      <img src="{{ url_for('video_feed') }}">
+    </div>
+
+  </body>
+</html>

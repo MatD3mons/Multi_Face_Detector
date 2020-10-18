@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link href="/static/css/index.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <title> Upload new file</title>
+
+    <form action="/camera" method="post" class="form">
+      <input type="submit" value="Camera" class="input">
+    </form>
+
+
+    <div class="first">
+      <form action="/image" method=post enctype=multipart/form-data class="form">
+        <h1>Chose your IA</h1>
+        <select type=select name=take class="input-file">
+          <option valeur="FasterRCNN">FasterRCNN</option>
+        </select>
+        <h1>Upload new file</h1>
+        <input type=file name=image class="input-file">
+        <input type=submit value=Predict class="input">
+      </form>
+    </div>
+
+    {% if image %}
+      <div class="render">
+        <img src="{{ image }}">
+        <img src="{{ prediction }}">
+      </div>
+    {%endif%}
+
+  </body>
+</html>
