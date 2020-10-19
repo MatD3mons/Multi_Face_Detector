@@ -260,3 +260,5 @@ Train/Detector/Image/
 Train/Detector/Label/*
 Train/Detector/Label/
 
+/Serveur/models/*
+
