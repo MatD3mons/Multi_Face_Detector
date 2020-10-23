@@ -4,11 +4,11 @@
 **Plan :**
   1. Différence entre CNN, RCNN, Fast RCNN et Faster RCNN (et pq on a choisi celui là plutot qu'un autre)
   2. On explique notre data (ce qui y'a, d'où elle vient, comment on l'a clean, comment on l'utilise dans le notebook)
-  3. Screens rapides de notre code (ligne technique ou qui peut être vague en la lisant des trucs du genre)
+  3. Quelques notions/bouts de code techniques
   4. Résultats de différents IA qu'on a (avec temps de prédiction et pq que lui il est moins ouf des trucs du genre)
   5. Tuto comment utiliser le serveur
 
-# Différences entre CNN, RCNN, Fast-RCNN, Faster-RCNN
+## Différences entre CNN, RCNN, Fast-RCNN, Faster-RCNN
 * Un CNN (Convolutionnal Neural Network) est un réseau de neuronne qiu permet avec une image en entrée du réseau, faire des prédictions sur l'objet dominant d'une image, c'est de la classification : Une image, un objet a prédire.
 
 * Un RCNN (Region Based Convolutionnal Neural Network) est un réseau permettant de faire de la détection d'objets sur une image ou un flux vidéo (webcam par exemple) : une image, plusieurs objets potentiel pour la prédiction. le principe est simple, avec une image, un algorithme (selective search) vas proposer 2000 zones d'intérêts, et chaque zone d'intérêt sur l'image seront donnée en en entrée à la partie CNN du réseau, puis pour chaque zone d'intérêt, une prédiction sera faîte pour déterminer l'objet.
@@ -21,10 +21,13 @@
 
 __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédiction bien plus raisonnable qu'un simple RCNN par exemple.__
 
-# Notre Dataset [1]
-* Disponible sur https://www.robots.ox.ac.uk/~vgg/data/vgg_face/ Notre Dataset contient 15000+ photos de base de visages de célébrités, ainsi que les coordonnées des boundings boxes de chaques photos. Une fois toutes les photos téléchargés via un script, il a fallut nettoyer le dataset, nous avons 2 algorithmes pour cela, un qui se base sur un algorithme de reconnaissance de visage qui supprimera les photos sans visages/corrompu, et un autre qui se contente juste de supprimer les photos corrompu. *__Explique comment sont organisés les labels .csv et Insère un screen de toes scripts stp, faut un screen du code qui clean, et un autre pour dl la data. Si tu peux mets un ptit screen du show batch de quelques photos pour qu'on puisse voir à quoi ça ressemble stp, moi jpeux pas y'a plus rien qui fonctionne je crois j'ai delete mon dossier sur mon drive et flm de tout redl__*  
+## Notre Dataset [1]
+* Disponible sur https://www.robots.ox.ac.uk/~vgg/data/vgg_face/ Notre Dataset contient 15000+ photos de base de visages de célébrités, ainsi que les coordonnées des boundings boxes de chaques photos. Une fois toutes les photos téléchargés via un script, il a fallut nettoyer le dataset, nous avons 2 algorithmes pour cela, un qui se base sur un algorithme de reconnaissance de visage qui supprimera les photos sans visages/corrompu, et un autre qui se contente juste de supprimer les photos corrompu. *__Explique comment sont organisés les labels .csv et Insère un screen de toes scripts stp, faut un screen du code qui clean, et un autre pour dl la data. Si tu peux mets un ptit screen du show batch de quelques photos pour qu'on puisse voir à quoi ça ressemble stp, moi jpeux pas y'a plus rien qui fonctionne je crois j'ai delete mon dossier sur mon drive et flm de tout redl déso__*  
 
-# Quelques points technique de notre code
+## Quelques points techniques
+
+Plus d'information : https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af
+#### le ROI Pooling, c'est quoi ?
 
 # (*les screens pour éviter que je mette 3h à les retrouver pcq ma barre d'url est archi pleine j'en rajoute 10 par jours*)
  .*Architecture (simplifiée) (c'est pas le bon terme je sais je m'en occupe après)*
