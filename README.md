@@ -48,6 +48,12 @@ Avant de commencer, notre serveur ne tourne pas sous gpu, il possède une carte 
 
 *__Je te laisse mettre le screen d'une prédiction apres avoir expliqué comment y accéder__*
 
-[1] O. M. Parkhi, A. Vedaldi, A. Zisserman
+#### Améliorations possible
+
+* Un meilleur entraînement du modèle, actuellement notre modèle s'est entraîné sur 3300 photos et 800 pour la validation (comme dit précédemment, notre but était d'avoir un modèle fonctionnel et non "parfait", de plus une époque durait plus d'une heure, ce n'était qu'une question de gestion de temps qui nous a poussé à ne pas utiliser tout le dataset (mais également de mémoire pour Matthieu), sachant qu'il y a plus de 10000 photos sur notre dataset, l'entraîner sur l'intégralité du dataset pourrait être une option d'amélioration
+* Utiliser un réseau resnet ayant une meilleure précision, mais comme le point au dessus l'a précisé, ce n'était qu'un manque de temps.
+* Pour aller plus loin, nous pourrions réaliser de l'instance segmentation en utilisant un MASK RCNN (Plus d'information car ce type de detection ne sera pas expliqué dans ce readme : https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/), ce qui permettrait d'avoir une meilleure précision sur la localisation d'un visage dans une image (et non pas juste les coordonnées des bounding boxs) pour ensuite pourquoi pas, utiliser le modèle dans un projet plus ambitieux
+
+Dataset source : [1] O. M. Parkhi, A. Vedaldi, A. Zisserman
 Deep Face Recognition
 British Machine Vision Conference, 2015.
