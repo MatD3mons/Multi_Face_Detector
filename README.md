@@ -38,18 +38,15 @@ Notre choix d'architecture était assez mitigé entre un réseau resnet ou un re
 Plus d'informations sur les performances de différentes architectures de réseau : https://github.com/jcjohnson/cnn-benchmarks
 
 #### Différents temps de prédictions
+![](https://cv-tricks.com/wp-content/uploads/2017/12/RCNN-speed-comparison.jpg)
+     *Temps de prédiction sous gpu*
+     
+*__Je te laisse mettre le temps de prédictions de plusieurs images stp, pour bien montrer qu'on a un faster-RCNN, merci__*
 
-# (*les screens pour éviter que je mette 3h à les retrouver pcq ma barre d'url est archi pleine j'en rajoute 10 par jours*)
- .*Architecture (simplifiée) (c'est pas le bon terme je sais je m'en occupe après)*
-![](https://miro.medium.com/max/875/1*pSnVmJCyQIRKHDPt3cfnXA.png)
+#### Comment utiliser notre serveur pour faire vos prédictions facilement
+Avant de commencer, notre serveur ne tourne pas sous gpu, il possède une carte graphique non compatible avec cuda, les prédictions prendront donc plus de temps (environ 6-8s) sans compter que le serveur en lui même est long, compter à peu près 1min par prédiction, cependant le notebook reste disponible si vous voulez tester sous votre gpu. Pour essayer avec une webcam, nous vous laissons regarder le code source disponible dans "/Serveur/Thread_Camera.py" pour ^le faire foncitonner.
 
- .*Temps de prédiction de différents types de RCNN*
-![](https://miro.medium.com/max/875/1*4gGddZpKeNIPBoVxYECd5w.png)
-
- .*ROI Pooling*
-![](https://deepsense.ai/wp-content/uploads/2017/02/roi_pooling-1.gif.pagespeed.ce.5V5mycIRNu.gif)
-
-![](https://d2l.ai/_images/roi.svg)
+*__Je te laisse mettre le screen d'une prédiction apres avoir expliqué comment y accéder__*
 
 [1] O. M. Parkhi, A. Vedaldi, A. Zisserman
 Deep Face Recognition
