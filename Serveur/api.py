@@ -10,8 +10,8 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 import torch
 import torchvision.models as models
 from Serveur.Thread_Camera import Thread_Camera
-from keras.models import load_model
-import tensorflow as tf
+#from keras.models import load_model
+#import tensorflow as tf
 from Serveur.Thread_Camera import Camera
 
 app = Flask(__name__)
@@ -46,8 +46,9 @@ def face_recognizer(frame,take):
     img = torch.tensor(img.transpose(2, 1, 0)).cuda()
     chanel, width, height = img.shape
     # put the model in evaluation mode
+    """
     if take == "RCNN":
-        ss.setBaseImage(img)
+        ss.setBaseImage(frame)
         ss.switchToSelectiveSearchFast()
         boxes = ss.process()
         for e, result in enumerate(boxes):
@@ -59,7 +60,7 @@ def face_recognizer(frame,take):
                 out = RCNN.predict(img)
                 if out[0][0] > 0.65:
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2, cv2.LINE_AA)
-
+    """
     if take == "FasterRCNN":
         FasterRCNN.eval()
 
@@ -73,7 +74,7 @@ def face_recognizer(frame,take):
                 cv2.rectangle(frame, (int(boxes[1]), int(boxes[0])), (int(boxes[3]), int(boxes[2])), (0, 255, 0), 2, cv2.LINE_AA)
 
     if take == "cv2":
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY);
         faces = CV2.detectMultiScale(gray, 1.3, 5);
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
@@ -138,9 +139,9 @@ def camera():
 
 #first commit
 if __name__ == "__main__":
-    RCNN = load_model(os.path.join("models", "RCC.h5"))
-    FasterRCNN = get_model(2,os.path.join("model", "FasterRCNN"))
-    CV2 = cv2.CascadeClassifier(os.path.join("modeld", "haarcascade_frontalface_default.xml"))
+    FasterRCNN = get_model(2,os.path.join("models", "FasterRCNN"))
+    CV2 = cv2.CascadeClassifier(os.path.join("models", "haarcascade_frontalface_default.xml"))
+    #RCNN = load_model(os.path.join("models", "RCNN.h5"))
     Camera = Camera()
     threader = Thread_Camera(pile_image,pile_boxes,FasterRCNN)
     threader.start()
