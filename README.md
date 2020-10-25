@@ -16,27 +16,21 @@
 
 * Un Faster-RCNN est une version encore améliorée du Fast-RCNN, plus rapide par le fait que les zones d'intérêts sont obtenues grâce à un RPN (Region Proposal Network) qui prédira lui même. Ce qui résultera en un gain de temps.*
 
-![](https://i.ytimg.com/vi/v5bFVbQvFRk/maxresdefault.jpg)
-
+![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/Capture.PNG)
 __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédiction bien plus raisonnable qu'un simple RCNN par exemple.__
 
 ## Notre Dataset
-```
-https://github.com/MatD3mons/Multi_Face_Detector/tree/main/Train
-```
+** https://github.com/MatD3mons/Multi_Face_Detector/tree/main/Train **
+
 
 ## Quelques points techniques
 #### le ROI Pooling, c'est quoi ?
-```
-https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af
-```
+** https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af **
 ou
-```
-https://towardsdatascience.com/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44
-```
+** https://towardsdatascience.com/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44 **
 
 #### Architecture de réseau
-```
+```python
 model = models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
 ```
 Notre choix d'architecture était assez mitigé entre un réseau resnet ou un reseau vgg, cependant après plusieurs recherches, notre choix pour le resnet50 a été confirmé. un réseau vgg16 ou vgg19 est plus long à entraîner qu'un resnet50 ou resnet101, de plus un resnet 50 fait preuve d'une meilleur précision comparé au vgg16/vgg19. Notre but n'étant pas de faire un modèle parfait mais fonctionnel et pouvant faire des prédictions correcte, nous nous sommes donc basé sur un réseau resnet50 pré-entrainé sur le dataset coco.
@@ -44,7 +38,7 @@ Notre choix d'architecture était assez mitigé entre un réseau resnet ou un re
 Plus d'informations sur les performances de différentes architectures de réseau : https://github.com/jcjohnson/cnn-benchmarks
 
 #### Différents temps de prédictions
-![](https://cv-tricks.com/wp-content/uploads/2017/12/RCNN-speed-comparison.jpg)
+![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/detect.PNG)
      *Temps de prédiction sous gpu*
 
 *__Je te laisse mettre le temps de prédictions de plusieurs images stp, pour bien montrer qu'on a un faster-RCNN, merci__*
