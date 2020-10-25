@@ -61,6 +61,5 @@ Notre choix d'architecture était assez mitigé entre un réseau resnet ou un re
 
 Plus d'informations sur les performances de différentes architectures de réseau : https://github.com/jcjohnson/cnn-benchmarks
 
-Dataset source : [1] O. M. Parkhi, A. Vedaldi, A. Zisserman
 Deep Face Recognition
 British Machine Vision Conference, 2015.

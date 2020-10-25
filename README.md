@@ -48,6 +48,5 @@ Pour le Faster RCNN
 * Utiliser un réseau resnet ayant une meilleure précision, mais comme le point au dessus l'a précisé, ce n'était qu'un manque de temps.
 * Pour aller plus loin, nous pourrions réaliser de l'instance segmentation en utilisant un MASK RCNN en utilisant un algorithme pour récupérer une des data manquante pour entraîner le modèle si nous gardons ce dataset. (Plus d'information car ce type de detection ne sera pas expliqué dans ce readme : https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/), ce qui permettrait d'avoir une meilleure précision sur la localisation d'un visage dans une image (et non pas juste les coordonnées des bounding boxs) pour ensuite pourquoi pas, utiliser le modèle dans un projet plus ambitieux.
 
-Dataset source : [1] O. M. Parkhi, A. Vedaldi, A. Zisserman
 Deep Face Recognition
 British Machine Vision Conference, 2015.

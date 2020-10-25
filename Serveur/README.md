@@ -13,6 +13,5 @@ Une fois le dossier remplie vous pouvez lancer votre serveur en utilisant la com
 "python api.py"
 ```
 
-Dataset source : [1] O. M. Parkhi, A. Vedaldi, A. Zisserman
 Deep Face Recognition
 British Machine Vision Conference, 2015.
