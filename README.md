@@ -1,5 +1,4 @@
 # Multi_Face_Detector Projet 5 année en Intelligence Artificielle.
-*__Toutes les explications seront simplifiées pour éviter que le readme soit trop long__*
 
 **Plan :**
   1. Différence principale entre CNN, RCNN, Fast RCNN et Faster RCNN
@@ -7,6 +6,7 @@
   3. Quelques notions/bouts de code techniques
   4. Résultats de différents IA que nous avons obtenus
   5. Comment utiliser le serveur pour faire des prédictions simplement, accessible à tout le monde
+
 ## Différences entre CNN, RCNN, Fast-RCNN, Faster-RCNN
 * Un CNN (Convolutionnal Neural Network) est un réseau de neuronne qiu permet avec une image en entrée du réseau, faire des prédictions sur l'objet dominant d'une image, c'est de la classification : Une image, un objet a prédire.
 
@@ -20,15 +20,20 @@
 
 __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédiction bien plus raisonnable qu'un simple RCNN par exemple.__
 
-## Notre Dataset [1]
-
-lien vers le readme du Train
+## Notre Dataset
+```
+https://github.com/MatD3mons/Multi_Face_Detector/tree/main/Train
+```
 
 ## Quelques points techniques
 #### le ROI Pooling, c'est quoi ?
-*__Si t'arrives à trouver un lien qui explique vraiment bien pq on l'utilise je suis chaud pcq ça me sule là je retrouve plus mon lien__*
-Plus d'information : https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af
-ou : https://towardsdatascience.com/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44
+```
+https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af
+```
+ou
+```
+https://towardsdatascience.com/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44
+```
 
 #### Architecture de réseau
 ```
@@ -50,9 +55,9 @@ Pour le Faster RCNN
 ![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20Faster%20RCNN.PNG)
 
 #### Comment utiliser notre serveur pour faire vos prédictions facilement
-
-lien vers le readme Serveur
-
+```
+https://github.com/MatD3mons/Multi_Face_Detector/tree/main/Serveur
+```
 *__Je te laisse mettre le screen d'une prédiction apres avoir expliqué comment y accéder__*
 
 #### Améliorations possible
