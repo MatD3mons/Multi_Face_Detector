@@ -21,7 +21,8 @@
 __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédiction bien plus raisonnable qu'un simple RCNN par exemple.__
 
 ## Notre Dataset [1]
-* Disponible sur https://www.robots.ox.ac.uk/~vgg/data/vgg_face/ Notre Dataset contient 15000+ photos de base de visages de célébrités, ainsi que les coordonnées des boundings boxes de chaques photos. Une fois toutes les photos téléchargés via un script, il a fallut nettoyer le dataset, nous avons 2 algorithmes pour cela, un qui se base sur un algorithme de reconnaissance de visage qui supprimera les photos sans visages/corrompu, et un autre qui se contente juste de supprimer les photos corrompu. *__Explique comment sont organisés les labels .csv et Insère un screen de toes scripts stp, faut un screen du code qui clean, et un autre pour dl la data. Si tu peux mets un ptit screen du show batch de quelques photos pour qu'on puisse voir à quoi ça ressemble stp, moi jpeux pas y'a plus rien qui fonctionne je crois j'ai delete mon dossier sur mon drive et flemme de tout redl déso__*  
+
+lien vers le readme du Train
 
 ## Quelques points techniques
 #### le ROI Pooling, c'est quoi ?
@@ -49,7 +50,8 @@ Pour le Faster RCNN
 ![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20Faster%20RCNN.PNG)
 
 #### Comment utiliser notre serveur pour faire vos prédictions facilement
-Avant de commencer, notre serveur ne tourne pas sous gpu, il possède une carte graphique non compatible avec cuda, les prédictions prendront donc plus de temps (environ 6-8s) sans compter que le serveur en lui même est long, compter à peu près 1min par prédiction, cependant le notebook reste disponible si vous voulez tester sous votre gpu. Pour essayer avec une webcam, nous vous laissons regarder le code source disponible dans "/Serveur/Thread_Camera.py" pour ^le faire foncitonner.
+
+lien vers le readme Serveur
 
 *__Je te laisse mettre le screen d'une prédiction apres avoir expliqué comment y accéder__*
 
