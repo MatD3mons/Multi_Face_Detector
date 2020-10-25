@@ -35,3 +35,23 @@ class Thread_Camera(Thread):
                 self.pile_boxes.append(boxes)
             except:
                 pass
+
+class Camera():
+
+    def __init__(self):
+        self.cap = None
+
+    def setup(self):
+        self.cap = cv2.VideoCapture(0)
+
+    def read(self):
+        try:
+            return self.cap.read()
+        except:
+            pass
+
+    def reset(self):
+        try:
+            self.cap.release()
+        except:
+            pass

@@ -10,33 +10,18 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 import torch
 import torchvision.models as models
 from Serveur.Thread_Camera import Thread_Camera
+from keras.models import load_model
+import tensorflow as tf
+from Serveur.Thread_Camera import Camera
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 pile_boxes = []
 pile_image = []
+cv2.setUseOptimized(True);
+ss = cv2.ximgproc.segmentation.createSelectiveSearchSegmentation()
+#ss = cv2.ximgproc.createStructuredEdgeDetection("model/edge_boxes.yml")
 
-class Camera():
-
-    def __init__(self):
-        self.cap = None
-
-    def setup(self):
-        self.cap = cv2.VideoCapture(0)
-
-    def read(self):
-        try:
-            return self.cap.read()
-        except:
-            pass
-
-    def reset(self):
-        try:
-            self.cap.release()
-        except:
-            pass
-
-Camera = Camera()
 
 def numpy_to_jpg(numpy):
     ret, jpeg = cv2.imencode('.jpg', numpy)
@@ -61,6 +46,20 @@ def face_recognizer(frame,take):
     img = torch.tensor(img.transpose(2, 1, 0)).cuda()
     chanel, width, height = img.shape
     # put the model in evaluation mode
+    if take == "RCNN":
+        ss.setBaseImage(img)
+        ss.switchToSelectiveSearchFast()
+        boxes = ss.process()
+        for e, result in enumerate(boxes):
+            x, y, w, h = result
+            timage = frame[y:y + h, x:x + w]
+            resized = cv2.resize(timage, (224, 224), interpolation=cv2.INTER_AREA)
+            img = np.expand_dims(resized, axis=0)
+            with tf.device('/device:GPU:0'):
+                out = RCNN.predict(img)
+                if out[0][0] > 0.65:
+                    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2, cv2.LINE_AA)
+
     if take == "FasterRCNN":
         FasterRCNN.eval()
 
@@ -72,6 +71,12 @@ def face_recognizer(frame,take):
             score = np.round(prediction[0]["scores"][element].cpu().numpy(), decimals=4)
             if score > 0.25:
                 cv2.rectangle(frame, (int(boxes[1]), int(boxes[0])), (int(boxes[3]), int(boxes[2])), (0, 255, 0), 2, cv2.LINE_AA)
+
+    if take == "cv2":
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
+        faces = CV2.detectMultiScale(gray, 1.3, 5);
+        for (x, y, w, h) in faces:
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
     return height, width, frame
 
@@ -133,7 +138,10 @@ def camera():
 
 #first commit
 if __name__ == "__main__":
-    FasterRCNN = get_model(2,"models/model")
+    RCNN = load_model(os.path.join("models", "RCC.h5"))
+    FasterRCNN = get_model(2,os.path.join("model", "FasterRCNN"))
+    CV2 = cv2.CascadeClassifier(os.path.join("modeld", "haarcascade_frontalface_default.xml"))
+    Camera = Camera()
     threader = Thread_Camera(pile_image,pile_boxes,FasterRCNN)
     threader.start()
     app.run(port=12000, debug=True)
