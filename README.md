@@ -33,12 +33,11 @@ __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédi
 *Temps de prédiction sous gpu*
 ![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/detect.PNG)
 
-*__Je te laisse mettre le temps de prédictions de plusieurs images stp, pour bien montrer qu'on a un faster-RCNN, merci__*
 Pour le dectector cv2
-![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20CV2%20face.PNG)
+* ![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20CV2%20face.PNG)
 
 Pour le Faster RCNN
-![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20Faster%20RCNN.PNG)
+* ![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20Faster%20RCNN.PNG)
 
 #### Comment utiliser notre serveur pour faire vos prédictions facilement
 * https://github.com/MatD3mons/Multi_Face_Detector/tree/main/Serveur
