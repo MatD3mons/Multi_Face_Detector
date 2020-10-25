@@ -91,7 +91,8 @@ def gen(Camera):
             pile_image.append(image)
             boxes = pile_boxes.pop()
             try:
-                cv2.rectangle(image, (int(boxes[1]), int(boxes[0])), (int(boxes[3]), int(boxes[2])), (0, 255, 0), 2,cv2.LINE_AA)
+                for boxe in boxes:
+                    cv2.rectangle(image, (int(boxe[1]), int(boxe[0])), (int(boxe[3]), int(boxe[2])), (0, 255, 0), 2,cv2.LINE_AA)
             except:
                 pass
             frame = numpy_to_jpg(image)

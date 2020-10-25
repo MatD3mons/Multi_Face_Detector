@@ -15,6 +15,7 @@ class Thread_Camera(Thread):
 
     def run(self):
         while True:
+            boxes = []
             while len(self.pile_image):
                 img = self.pile_image.pop()
             try:
@@ -27,9 +28,10 @@ class Thread_Camera(Thread):
                     prediction = self.model([img])
 
                 for element in range(len(prediction[0]["boxes"])):
-                    boxes = prediction[0]["boxes"][element].cpu().numpy()
+                    boxe = prediction[0]["boxes"][element].cpu().numpy()
                     score = np.round(prediction[0]["scores"][element].cpu().numpy(), decimals=3)
-                    if score > 0.25:
-                        self.pile_boxes.append(boxes)
+                    if score > 0.5:
+                        boxes.append(boxe)
+                self.pile_boxes.append(boxes)
             except:
                 pass

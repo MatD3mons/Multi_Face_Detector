@@ -262,3 +262,7 @@ Train/Detector/Label/
 
 /Serveur/models/*
 
+/Train/files/
+/Train/Image/
+/Train/Label/
+/Train/Model/
