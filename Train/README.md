@@ -5,9 +5,9 @@
 Une fois téléchargés il faut crée les fichier suivant:
 ```
 files
-Image
-Label
-Model
+- Image
+- Label
+- Model
 ```
 
 Notre Dataset contient 15000+ photos de base de visages de célébrités, ainsi que les coordonnées des boundings boxes de chaques photos. Une fois toutes les photos téléchargés via le notebook

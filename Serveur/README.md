@@ -8,9 +8,16 @@ compter à peu près 1min par prédiction, cependant le notebook reste disponibl
 Pour essayer avec une webcam, nous vous laissons regarder le code source disponible.
 
 Avant de lancer votre serveur. il faut remplir un dossier "models" avec les différent technique rencontrer dans la partie "Train"
+```
+Models
+- FasterRCNN
+- haarcascade_frontalface_default.xml
+- RCNN.h5
+```
+
 Une fois le dossier remplie vous pouvez lancer votre serveur en utilisant la commande suivant :
 ```
-"python api.py"
+python api.py
 ```
 
 Deep Face Recognition
