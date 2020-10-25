@@ -27,6 +27,7 @@ __Nous avons donc choisi de réaliser un Faster-RCNN de par sa vitesse de prédi
 #### le ROI Pooling, c'est quoi ?
 *__Si t'arrives à trouver un lien qui explique vraiment bien pq on l'utilise je suis chaud pcq ça me sule là je retrouve plus mon lien__*
 Plus d'information : https://towardsdatascience.com/region-of-interest-pooling-f7c637f409af
+ou : https://towardsdatascience.com/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44
 
 #### Architecture de réseau
 ```
@@ -39,8 +40,13 @@ Plus d'informations sur les performances de différentes architectures de résea
 #### Différents temps de prédictions
 ![](https://cv-tricks.com/wp-content/uploads/2017/12/RCNN-speed-comparison.jpg)
      *Temps de prédiction sous gpu*
-     
+
 *__Je te laisse mettre le temps de prédictions de plusieurs images stp, pour bien montrer qu'on a un faster-RCNN, merci__*
+Pour le dectector cv2
+![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20CV2%20face.PNG)
+
+Pour le Faster RCNN
+![](https://github.com/MatD3mons/Multi_Face_Detector/blob/main/Image/photo%20Faster%20RCNN.PNG)
 
 #### Comment utiliser notre serveur pour faire vos prédictions facilement
 Avant de commencer, notre serveur ne tourne pas sous gpu, il possède une carte graphique non compatible avec cuda, les prédictions prendront donc plus de temps (environ 6-8s) sans compter que le serveur en lui même est long, compter à peu près 1min par prédiction, cependant le notebook reste disponible si vous voulez tester sous votre gpu. Pour essayer avec une webcam, nous vous laissons regarder le code source disponible dans "/Serveur/Thread_Camera.py" pour ^le faire foncitonner.
