@@ -12,7 +12,7 @@ files
 
 Notre Dataset contient 15000+ photos de base de visages de célébrités, ainsi que les coordonnées des boundings boxes de chaques photos. Une fois toutes les photos téléchargés via le notebook
 ```
-INSTALL - DATA.ipynb
+Dataset Faster RCNN.ipynb
 ```
 ou il a fallut nettoyer le dataset, nous avons un algorithmes pour cela, un qui se base sur un algorithme de reconnaissance de visage qui supprimera les photos sans visages/corrompu et qui se contente juste de supprimer les photos corrompu.
 
